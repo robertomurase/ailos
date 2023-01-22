@@ -1,0 +1,9 @@
+<div class="main-content">
+  <app-stepper></app-stepper>
+  <h1>Informe o CPF do futuro cooperado (a)</h1>
+  <p class="subtitle">Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro
+    futuramente.<br>
+    Digite apenas os números (sem pontos ou traços). </p>
+
+  <app-form (fireFormState)="receiveFormState($event)" [formSubmitted]="formSubmitted" [formValid]="formValid"></app-form>
+</div>

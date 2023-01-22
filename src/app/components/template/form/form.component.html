@@ -1,0 +1,20 @@
+<form [formGroup]="form" class="form">
+  <div class="form__row">
+    <div class="form__field">
+      <label>CPF</label>
+      <input formControlName="cpf" [readonly]="form.valid && formSubmitted" placeholder="000.000.000-00"
+        mask="000.000.000-00" [ngClass]="!form.valid && formSubmitted ? 'input--invalid' : ''"
+        (input)="onCpfChange()" />
+      <div class="form__error" *ngIf="form.invalid && formSubmitted">Informe um CPF válido</div>
+    </div>
+    <div class="form__field--sem-label">
+      <button type="button" class="btn btn__primario btn--p" [disabled]="form.valid && formSubmitted"
+        (click)="submitForm()">
+        Consultar por CPF
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- <app-dados-cooperado *ngIf="form.valid && formSubmitted"></app-dados-cooperado> -->
+<app-dados-cooperado></app-dados-cooperado>

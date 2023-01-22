@@ -1,0 +1,36 @@
+<mat-drawer-container class="sidenav-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" opened>
+    <div class="sidenav__menu">
+      <img class="logo" src="./assets/img/ailos.png" alt="" srcset="">
+      <a href="#">
+        <img class="icone" src="./assets/img/menu.svg" width="20" height="20" alt="" srcset="">
+      </a>
+      <a href="#">
+        <img class="icone" src="./assets/img/lupa.svg" alt="" srcset="">
+      </a>
+      <a href="#">
+        <img class="icone" src="./assets/img/estrela.svg" alt="" srcset="">
+      </a>
+      <a href="#">
+        <img class="icone" src="./assets/img/chat.svg" alt="" srcset="">
+      </a>
+      <a href="#">
+        <img class="icone" src="./assets/img/categorias.svg" alt="" srcset="">
+      </a>
+      <a href="#">
+        <img class="icone" src="./assets/img/central.svg" alt="" srcset="">
+      </a>
+    </div>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <div class="container">
+      <app-header></app-header>
+      <app-main-content (fireFormState)="receiveFormState($event)" [formSubmitted]="formSubmitted"
+        [formValid]="formValid"></app-main-content>
+      <app-footer [formSubmitted]="formSubmitted" [formValid]="formValid"
+        (fireNovaAdmissao)="receiveFormState($event)"></app-footer>
+    </div>
+  </div>
+
+</mat-drawer-container>
